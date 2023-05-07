@@ -8,7 +8,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 def evaluar_proficiencia(texto):
     prompt = (
         f"Evaluar la calidad del siguiente texto: \"{texto}\". "
-        "Identificar errores gramaticalles, de puntuación y estimar el porcentaje de proficiencia, tomando como modelo el siguiente texto:"
+        "Identificar errores gramaticalles y de puntuación. Tomano como modelo el siguiente texto, dar un porcentaje de proficiencia:"
         "Decir las cosas bien, tener en la pluma el don exquisito de la gracia y en el pensamiento la inmaculada linfa de luz donde"
         "se bañan las ideas para aparecer hermosas, ¿no es una forma de ser bueno?... La caridad y el amor ¿no pueden demostrarse"
         "también concediendo a las almas el beneficio de una hora de abandono en la paz de la palabra bella; la sonrisa de una frase armoniosa; "
@@ -30,7 +30,7 @@ def evaluar_proficiencia(texto):
         prompt=prompt,
         max_tokens=900,
         n=1,
-        temperature=0.1,
+        temperature=0.7,
     )
     return completions.choices[0].text.strip()
 
