@@ -8,9 +8,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 def evaluar_proficiencia(texto):
     prompt = (
         f"Evaluar la calidad del siguiente texto: \"{texto}\". "
-        "Identificar errores y estimar el porcentaje de proficiencia. Tomar en cuenta errores de puntuación y vicios del lenguaje."
-        "Generar un informe de sugerencias de mejora, incluyendo mejoras de puntuación."
-        "El siguiente texto se considera con un nivel de  proficiencia de 100%:"
+        "Identificar errores gramaticalles, de puntuación y estimar el porcentaje de proficiencia, tomando como modelo el siguiente texto:"
         "Decir las cosas bien, tener en la pluma el don exquisito de la gracia y en el pensamiento la inmaculada linfa de luz donde"
         "se bañan las ideas para aparecer hermosas, ¿no es una forma de ser bueno?... La caridad y el amor ¿no pueden demostrarse"
         "también concediendo a las almas el beneficio de una hora de abandono en la paz de la palabra bella; la sonrisa de una frase armoniosa; "
@@ -25,6 +23,7 @@ def evaluar_proficiencia(texto):
         "De lo que creéis la verdad ¡cuán pocas veces podéis estar absolutamente seguros! Pero de la belleza y el encanto con que lo hayáis comunicado, estad seguros que siempre vivirán."
         "Hablad con ritmo; cuidad de poner la unción de la imagen sobre la idea; respetad la gracia de la forma ¡oh pensadores, sabios, sacerdotes!"
         "y creed que aquellos que os digan que la Verdad debe presentarse en apariencias adustas y severas son amigos traidores de la Verdad."
+        "Generar un informe de los errores e incluir sugerencias de mejora, incluyendo mejoras de puntuación."
     )
     completions = openai.Completion.create(
         engine="text-davinci-003",
