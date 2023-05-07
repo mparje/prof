@@ -11,9 +11,9 @@ def evaluar_proficiencia(texto):
         "Identificar errores y estimar el porcentaje de proficiencia."
     )
     completions = openai.Completion.create(
-        engine="davinci",
+        engine="text-davinci-003",
         prompt=prompt,
-        max_tokens=100,
+        max_tokens=500,
         n=1,
         temperature=0.5,
     )
