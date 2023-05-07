@@ -17,7 +17,7 @@ def evaluar_proficiencia(texto):
         prompt=prompt,
         max_tokens=900,
         n=1,
-        temperature=0.7,
+        temperature=0.3,
     )
     return completions.choices[0].text.strip()
 
