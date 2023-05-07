@@ -8,7 +8,8 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 def evaluar_proficiencia(texto):
     prompt = (
         f"Evaluar la calidad del siguiente texto: \"{texto}\". "
-        "Para ello, 1. Reescribir el texto, mejorándolo. 2. Decir qué cambios se hicieron y por qué. 3. Asignar una puntuacion de 0 a 100. 4. Sugerir recursos en línea que ayuden a superar las deficiencias"
+        "Para ello, 1. Reescribir el texto, mejorándolo. 2. Escribir un informe detallado de los cambios que se hicieron y por qué. 3. Asignar una puntuacion de 0 a 100."
+        "4. Sugerir recursos en línea en españoñl que ayuden a superar las deficiencias encontradas."
      
     )
     completions = openai.Completion.create(
