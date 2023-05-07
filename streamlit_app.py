@@ -8,7 +8,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 def evaluar_proficiencia(texto):
     prompt = (
         f"Evaluar la proficiencia en español del siguiente texto: \"{texto}\". "
-        "Identificar errores y estimar el porcentaje de proficiencia."
+        "Identificar errores y estimar el porcentaje de proficiencia. Tomar en cuenta erores de puntuación y vicios del lenguaje."
     )
     completions = openai.Completion.create(
         engine="text-davinci-003",
