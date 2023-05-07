@@ -9,7 +9,7 @@ def evaluar_proficiencia(texto):
     prompt = (
         f"Evaluar la calidad del siguiente texto: \"{texto}\". "
         "Para ello, 1. Reescribir el texto, mejorándolo. 2. Escribir un informe detallado de los cambios que se hicieron y por qué. 3. Asignar una puntuacion de 0 a 100."
-        "4. Sugerir recursos en línea en españoñl que ayuden a superar las deficiencias encontradas."
+        "4. Sugerir recursos en línea en español que ayuden a superar las deficiencias encontradas."
      
     )
     completions = openai.Completion.create(
@@ -22,8 +22,8 @@ def evaluar_proficiencia(texto):
     return completions.choices[0].text.strip()
 
 def main():
-    st.title("Evaluación de proficiencia en español con GPT-3")
-    st.write("Introduce un texto en español y obtén una evaluación de tu proficiencia en español con GPT-3 DaVinci.")
+    st.title("Evaluación de competencia en español con GPT-3")
+    st.write("Introduce un texto en español y obtén una evaluación de tu dominio del español con GPT-3 Davinci.")
 
     user_text = st.text_area("Escribe tu texto aquí:", height=200)
 
