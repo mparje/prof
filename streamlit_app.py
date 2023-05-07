@@ -8,22 +8,8 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 def evaluar_proficiencia(texto):
     prompt = (
         f"Evaluar la calidad del siguiente texto: \"{texto}\". "
-        "Identificar errores gramaticalles y de puntuación. Tomano como modelo el siguiente texto, dar un porcentaje de proficiencia:"
-        "Decir las cosas bien, tener en la pluma el don exquisito de la gracia y en el pensamiento la inmaculada linfa de luz donde"
-        "se bañan las ideas para aparecer hermosas, ¿no es una forma de ser bueno?... La caridad y el amor ¿no pueden demostrarse"
-        "también concediendo a las almas el beneficio de una hora de abandono en la paz de la palabra bella; la sonrisa de una frase armoniosa; "
-        "el «beso en la frente» de un pensamiento cincelado; el roce tibio y suave de una imagen que toca con su ala de seda nuestro espíritu?"
-        "La ternura para el alma del niño está, así como en el calor del regazo, en la voz que le dice cuentos de hadas; sin los cuales habrá"
-        "algo de incurablemente yermo en el alma que se forme sin haberlos oído. Pulgarcito es un mensajero de San Vicente de Paul."
-        "Barba Azul ha hecho a los párvulos más beneficios que Pestalozzi. La ternura para nosotros, que sólo cuando nos hemos hecho despreciables"
-        "dejamos enteramente de parecernos a los niños, suele estar también en que se nos arrulle con hemosas palabras."
-        "Como el misionero y como la Hermana, el artista cumple su obra de misericordia. Sabios: enseñadnos con gracia."
-        "Sacerdotes: pintad a Dios con pincel amable y primoroso, y a la virtud en palabras llenas de armonía."
-        "Si nos concedéis en forma fea y desapacible la verdad, eso equivale a concedernos el pan con malos modos."
-        "De lo que creéis la verdad ¡cuán pocas veces podéis estar absolutamente seguros! Pero de la belleza y el encanto con que lo hayáis comunicado, estad seguros que siempre vivirán."
-        "Hablad con ritmo; cuidad de poner la unción de la imagen sobre la idea; respetad la gracia de la forma ¡oh pensadores, sabios, sacerdotes!"
-        "y creed que aquellos que os digan que la Verdad debe presentarse en apariencias adustas y severas son amigos traidores de la Verdad."
-        "Generar un informe de los errores e incluir sugerencias de mejora, incluyendo mejoras de puntuación."
+        "Para ello, 1. Reescribir el texto, mejorándolo. 2. Decir qué cambios se hicieron y por qué. 3. Asignar una puntuacion de 0 a 100. 4. Sugerir recursos en línea que ayuden a superar las deficiencias"
+     
     )
     completions = openai.Completion.create(
         engine="text-davinci-003",
