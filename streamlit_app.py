@@ -9,14 +9,14 @@ def evaluar_proficiencia(texto):
     prompt = (
         f"Evaluar la calidad del siguiente texto: \"{texto}\". "
         "Identificar errores y estimar el porcentaje de proficiencia. Tomar en cuenta errores de puntuación y vicios del lenguaje."
-        "Generar un informe de sugerencias de mejoras, incluyendo la puntuación."
+        "Generar un informe de sugerencias de mejora, incluyendo mejoras de puntuación."
     )
     completions = openai.Completion.create(
         engine="text-davinci-003",
         prompt=prompt,
-        max_tokens=500,
+        max_tokens=900,
         n=1,
-        temperature=0.5,
+        temperature=0.1,
     )
     return completions.choices[0].text.strip()
 
