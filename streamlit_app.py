@@ -11,15 +11,18 @@ def evaluar_proficiencia(texto):
         "Para ello, 1. Reescribir el texto, mejorándolo. 2. Escribir un informe detallado de los cambios que se hicieron y por qué. 3. Asignar una puntuacion de 0 a 100."
         "4. Sugerir recursos en línea en español que ayuden a superar las deficiencias encontradas."
     )
-    completions = openai.Completion.create(
-        engine="text-davinci-003",
-        prompt=prompt,
-        max_tokens=900,
-        n=1,
-        temperature=0.7,
-    )
-    return completions.choices[0].text.strip()
+    
+    
+    completion = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "user", "content": prompt}
+        ])
+    response = completion.choices[0].message.content
+    return response
 
+    
+    
 def main():
     st.title("Evaluación de competencia en español con GPT-3")
     
