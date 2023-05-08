@@ -24,7 +24,7 @@ def evaluar_proficiencia(texto):
     
     
 def main():
-    st.title("Evaluación de competencia en español con GPT-3")
+    st.title("Evaluación de competencia en español")
     
     # Agregar descripción e información de clases personalizadas en la columna izquierda
     st.sidebar.header("Acerca de esta aplicación")
